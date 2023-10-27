@@ -1,0 +1,123 @@
+
+.menu_bottom{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 1;
+    gap: .5rem;
+}
+.menu_btn, .menu_bottom li a, .menu_bottom li{
+    color: #2C318D;
+    padding:  .3rem;
+    /* padding-bottom: .6rem; */
+    text-decoration: none;
+    transition: all ease-in-out .2s;
+    border-radius: 5px;
+font-weight: 600;
+}
+.menu_bottom li a{
+    padding: 0;
+}
+.menu_btn:hover, 
+.menu_btn:focus-within, 
+.menu_bottom li:hover,
+.menu_bottom li:focus-within
+{
+    background: #2C318D;
+    color: #ffffff;
+} 
+
+.menu_bottom li:hover a,
+.menu_bottom li:focus-within a{
+color: #fff;
+}
+.menu_btn{
+    display: flex;
+    align-items: center;
+    gap: .1rem;
+
+}
+.menu_bottom_icon{
+    padding: 0 !important;
+    margin: 0 !important;
+    color: #cacaca;
+}
+.dropdown_menu_section{
+    position: relative;
+
+}
+.dropdown_menu{
+    position: absolute;
+    top: 31px;
+    left: 0px;
+    width: min(100% + 8rem, 35ch);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem .5rem;
+    opacity: 0;
+    text-align: left;
+    visibility: collapse;
+    transform: translateY(20px); 
+    border-radius: 5px;
+    background:  #2C318D;
+    transition: all ease-in-out .4s;
+    box-shadow: rgba(0, 0, 0, 0.09)
+    0px 2px 1px, 
+     rgba(0, 0, 0, 0.09) 
+     0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 
+      0px 8px 4px,
+       rgba(0, 0, 0, 0.09)
+        0px 16px 8px,
+         rgba(0, 0, 0, 0.09)
+          0px 32px 16px;
+          z-index: 999;
+}
+.dropdown_menu li a{
+    color: #e9e9e9;
+    font-weight: normal;
+    font-size: .8rem;
+}
+.dropdown_menu li:hover, 
+.dropdown_menu li:focus-within 
+{
+   background: #91dfba;
+ 
+}
+.dropdown_menu li:hover a,
+.dropdown_menu li:focus-within a
+
+{
+    color: #000;
+}
+.dropdown_menu_section:hover .dropdown_menu,
+.dropdown_menu_section:focus-within .dropdown_menu
+
+{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(5px);
+}
+.dropdown_menu_section:hover.dropdown_menu_section .menu_btn{
+    color: #ffffff !important;
+    background: #2C318D !important;
+}
+.active{
+    color: #fff !important;
+    padding: .4rem .6rem  !important;
+    background: #2C318D;
+}
+
+.btn_group{
+    display: flex;
+    gap: .4rem;
+}
+.activeBtn{
+    display: flex;
+    align-items: center;
+    gap: .1rem;
+    color: #fff !important;
+    padding: .4rem !important;
+    background: #2C318D !important;
+}

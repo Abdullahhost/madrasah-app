@@ -1,0 +1,29 @@
+
+
+.pdf_section{
+    margin-bottom: 4rem; 
+}
+
+.result_title_section{
+
+    margin: 5px auto;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem .8rem;
+    background: #6439FF;
+    color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 1px #131313;
+    animation: colorrotate 3s infinite;
+
+
+}
+@keyframes colorrotate{
+    0%{
+        filter: hue-rotate(0deg);
+    }100%{
+        filter: hue-rotate(5deg);
+    }
+}

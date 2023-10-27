@@ -1,0 +1,53 @@
+
+.counter_wrapper{
+    position: relative;
+}
+
+.counter_section{
+    min-height: 500px;
+    background-image: url('images/allStudent_image.jpg');
+    opacity: 0.65;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1.5rem;
+    z-index: -2;
+
+}
+.counter_box{
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    color: #ff0000;
+    opacity: 1;
+    transform: translateY(-50%);
+}
+.counter_element{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.counter_element h5{
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+
+}
+.counter_element p{
+    color: #fffda2;
+    font-size: 4rem;
+    font-weight: 800;
+    text-shadow: 0 0 4px #000;
+
+}

@@ -1,0 +1,71 @@
+.table{
+    
+    margin: 20px auto;
+    border: 1px solid #0001;
+    padding: 1rem;
+    width: 100%;
+    overflow-x: auto;
+}
+tr{
+    text-align: left;
+    padding: 0rem 2rem;
+
+}
+td, th{
+    padding: .3rem .6rem;
+    /* border-right: 1px solid #0003v; */
+    border-left: 1px solid #0003;
+}
+th{
+    background: #6439FF;  
+    padding: .8rem .5rem;
+    color: #ececec;
+    font-size: .9rem ;
+}
+td{
+    font-size: small ;
+}
+.oddrow{
+    background: #0001;
+    transition: all ease .2s;
+}
+.evenrow{
+   
+    background: rgba(245, 245, 245, 0.067);
+    transition: all ease .2s;
+}
+
+
+
+
+.profile_picture{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.new_btn{
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #6439FF;
+    box-shadow: 0 0 5px #000;
+    
+
+}
+.new_btn_icon{
+    transform: translateY(-5px);
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 3rem;
+    color: #fff;
+}

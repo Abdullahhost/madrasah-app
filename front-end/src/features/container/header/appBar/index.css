@@ -1,0 +1,114 @@
+.stylist{
+    font-family: 'Russo One', sans-serif;
+    color: rgba(56, 56, 56, 0.8)
+}
+.logo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: rgba(6, 24, 44, 0.4)
+     0px 0px 0px 2px, 
+    rgba(6, 24, 44, 0.65) 
+    0px 4px 6px -1px,
+     rgba(255, 255, 255, 0.08) 
+    0px 1px 0px inset;
+}
+ul{
+    list-style-type: none;
+}
+li{
+    list-style-type: none;
+}
+.top_menu_wrapper{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 1.4rem;
+}
+.top_menu_container{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: .8rem;
+}
+.menu_top_item{
+    text-decoration: none;
+    color: #929292;
+    transition: color ease .2s;
+    font-size: .7rem;
+}
+.setColor{
+    color: #929292;
+    transition: color ease .1s;
+}
+.menu_top:hover a, .menu_top:hover .setColor{
+    color: #000;
+}
+.searchBar{
+    padding: .6rem 1rem;
+    border-radius: 30px;
+    
+}
+.searchIcon{
+    position: absolute;
+    top: 0; 
+    right: 0;
+    width: 37px !important;
+    height:38px !important;
+    background: #414040;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: #fff;
+    padding: .4rem;
+}
+
+.menu_bottom_section_toggle{
+    display: none;
+}
+@media screen and ( max-width: 1150px ) {
+    .menu_bottom_section_toggle{
+        display: block;
+    }
+    .menu_bottom_section{
+        display: none;
+    }
+    .searchBar{
+        padding: .4rem .2rem;
+      }
+  .searchIcon{
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+@media screen and ( max-width: 850px ) {
+  
+  .logo{
+    width: 75px;
+    height: 75px;
+  }
+    .top_menu_Link_container{
+    display: none !important;
+  }
+
+  .top_menu_container{
+    padding: 0 !important;
+    margin: 0;
+    width: 100px;
+    align-content: end;
+}
+
+}
+
+@media screen and ( max-width: 690px ) {
+    .logo{
+        width: 55px;
+        height: 55px;
+      }
+    .logo_section{
+        flex-direction: column !important;
+        align-items: flex-end !important;
+    }
+}

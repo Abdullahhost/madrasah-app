@@ -1,0 +1,35 @@
+
+
+table{
+    min-width: 80%;
+    padding: 5rem 5rem ;
+    font-size: small;
+}
+td, th{
+padding:  .5rem;
+color: #c4cbe0;
+/* border: 0.1px solid #4b4b4b; */
+
+}
+.tableHead{
+    margin: 4rem;
+    background: #3519a5;
+}
+.evenRow{
+    background: rgb(30, 54, 85);
+    transition: all ease .2s;
+}
+.oddRow{
+    background: #2c2c2c;
+    transition: all ease .2s;
+}
+.oddRow:hover, .evenRow:hover, .oddRow:focus, .evenRow:focus{
+    transform : scaleY(1.2) scaleX(1.1) translateY(-5px);
+    background: rgb(133, 25, 79);
+}
+.evenRow:hover, .evenRow:focus {
+    background: #1e9e3e;
+}
+.oddRow:hover td, .oddRow:focus td, .evenRow:focus td, .evenRow:hover td{
+    color: #ffffff;
+}

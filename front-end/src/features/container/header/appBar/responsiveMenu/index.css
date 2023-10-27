@@ -1,0 +1,71 @@
+
+.menu_responsive_section{
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: #161616;
+    animation: fadeIn linear .6s 1;
+}
+.menu_responsive_section li{
+    border-bottom: 1px solid #fff2;
+    padding: .7rem
+}
+.menu_responsive_section li:hover{
+    background: #161616;
+}
+.menu_responsive_section li:hover span{
+color: #fff;
+}
+.menu_responsive_section li a{
+    text-decoration: none;
+}
+.menu_responsive_section li span, .menu_responsive_section li a{
+    color: #fff9;
+}
+.menu_bottom_sub{
+    /* position: relative; */
+    width: 100%;
+}
+.menu_responsive_sub_menu{
+    padding: 1rem;
+    display: none;
+    transition: all ease-in .5s;
+}
+
+.menu_responsive_sub_menu li:hover{
+    background: rgb(37, 37, 37);
+}
+.menu_responsive_sub_menu li a {
+   font-size: small;
+}
+/* .menu_responsive_section li: */
+.menu_bottom_sub:focus-within .menu_responsive_sub_menu{
+    display: block;
+}
+
+
+
+.btn_group_section{
+    padding: 2rem .8rem;
+}
+
+.btn_group{
+    width: fit-content;
+}
+
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.menu_responsive_link_section .menu_top:hover a, .menu_responsive_link_section .menu_top:hover .setColor{
+    color: #fff;
+}
+
+.btn_group_section .btn_group .signUpBtn{
+    background: #2C2C72 !important;
+}

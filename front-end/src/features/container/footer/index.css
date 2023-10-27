@@ -1,0 +1,136 @@
+
+
+.footer_section{
+    width: 100%;
+    /* height: 55vh; */
+    background: #2b2b2b;
+    color: #9c9c9c;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 2rem 10rem;
+    font-family: "Roboto", sans-serif;
+}
+.footer_left_section{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-direction: column;
+}
+.footer_left_top h3{
+    color: #e9e9e9;
+    padding: 1rem 0rem;
+}
+.footer_left_top p{
+    color: #666666;
+}
+.footer_left_bottom{
+    height: min(180px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 2rem 0rem;
+
+}
+.telephone_section li{
+    list-style-type: none;
+}
+.telephone_section li a{
+  text-decoration: none;
+  font-weight: bolder;
+  color: #fff;
+  font-size: 1.3rem;
+  
+}
+.addressSection a{
+    text-decoration: none;
+    color: indianred;
+}
+.logo_image{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    opacity: .8;
+}
+.logo_text{
+  line-height: 4rem;
+  color: #555;
+}
+.footer_left_section{
+ flex: 5;   
+}
+.footer_right_section{
+ flex: 2;
+
+}
+.footer_left_bottom_toggle{
+    display: none;
+    height:fit-content;
+
+}
+.footer_right_section{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-direction: column;
+}
+.footer_right_bottom{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 2rem;
+}
+.social_link small{
+    margin-top: .1rem;
+    display: block;
+}
+.social_link a{
+    color: #fff;
+    text-decoration: none;
+}
+.social_link a:hover{
+    color: lightgreen;
+}
+.all_rights{
+    padding: .2rem;
+    font-size: small;
+    background: #222121;
+    color: #5f5f5f;
+    text-align: center;
+}
+@media screen and ( max-width: 1100px ) {
+    .footer_section{
+        padding: 1rem;
+    }
+    .footer_left_bottom{
+        height: min(200px);
+    }
+    .footer_left_section{
+        flex: 4;
+    }
+    .footer_right_section{
+        padding-left: 10%;
+    }
+}
+@media screen and ( max-width: 750px ) {
+    .footer_section{
+        flex-direction: column;
+    }
+    .footer_left_bottom{
+        display: none;
+    }
+    .footer_left_bottom_toggle{
+        display: block;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+}
