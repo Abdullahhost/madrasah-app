@@ -36,7 +36,7 @@ app.use(express.static('assets/images'))
 const port = process.env.PORT;
 
 
-const mongoPort = process.env.MONGOPORT;
+const mongoPort = process.env.MONGO_URL;
 
 
 
@@ -67,7 +67,7 @@ app.post('/setcookie', (req, res, next) => {
 
 const connection = async () => {
     try {
-        await mongoose.connect(`mongodb://127.0.0.1:${mongoPort}`);
+        await mongoose.connect(mongoPort);
         console.log('Connected to MongoDB!');
     } catch (err) {
         throw err
