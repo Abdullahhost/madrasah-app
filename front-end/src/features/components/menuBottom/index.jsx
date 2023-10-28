@@ -18,7 +18,7 @@ const BottomMenu = () => {
 
   // const getInformation = localStorage.getItem
 
-  const {data} = useFetch('http://localhost:5001/notice');
+  const {data} = useFetch('https://madrasah-app.onrender.com/notice');
 
   const navigate = useNavigate();
   return (

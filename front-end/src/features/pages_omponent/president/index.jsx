@@ -6,7 +6,7 @@ import Skeleton from '../../skeloten'
 const President = () => {
 
 
-    const { data, loading } = useFetch('http://localhost:5001/presidence')
+    const { data, loading } = useFetch('https://madrasah-app.onrender.com/presidence')
     return (
         <>
             
@@ -18,7 +18,7 @@ const President = () => {
             const {presidenceName, designation, educationQualification, mobileNumber, emailAddress, profile, _id } = item
               return <div className='card_ui' key={_id}>
             <div className="card_image">
-              <img src={`http://localhost:5001/${profile}`} alt="" />
+              <img src={`https://madrasah-app.onrender.com/${profile}`} alt="" />
             </div>
             <div className="card_content">
               <h2>{presidenceName}</h2>

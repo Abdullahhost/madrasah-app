@@ -39,7 +39,7 @@ const Sign_up = () => {
         dispatch(authSliceActions.loginStart())
 
         try {
-            const res = await axios.post('http://localhost:5001/auth/register', userInfo)
+            const res = await axios.post('https://madrasah-app.onrender.com/auth/register', userInfo)
             dispatch(authSliceActions.loginSuccess(res.data));
 
             navigate('/');

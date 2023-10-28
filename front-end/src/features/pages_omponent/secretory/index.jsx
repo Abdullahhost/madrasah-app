@@ -4,7 +4,7 @@ import useFetch from '../../../settings/hooks'
 import Skeleton from '../../skeloten'
 const Secretory = () => {
 
-  const {loading, data} = useFetch('http://localhost:5001/secretory')
+  const {loading, data} = useFetch('https://madrasah-app.onrender.com/secretory')
   return (
     <div>
         {loading ? <Skeleton /> : <div className='card_ui_section'>
@@ -13,7 +13,7 @@ const Secretory = () => {
           {data?.map((item) => {
               return <div className='card_ui' key={item._id}>
             <div className="card_image">
-            <img src={`http://localhost:5001/${item.profile}`} alt="" />
+            <img src={`https://madrasah-app.onrender.com/${item.profile}`} alt="" />
             </div>
             <div className="card_content">
               <h2>{item.presidenceName}</h2>

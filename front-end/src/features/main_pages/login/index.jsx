@@ -38,7 +38,7 @@ const Login_page = () => {
         dispatch(authSliceActions.loginStart())
 
         try {
-            const res = await axios.post('http://localhost:5001/auth/login', userInfo, { withCredentials: true })
+            const res = await axios.post('https://madrasah-app.onrender.com/auth/login', userInfo, { withCredentials: true })
             dispatch(authSliceActions.loginSuccess(res.data));
 
             

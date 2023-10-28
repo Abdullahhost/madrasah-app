@@ -6,7 +6,7 @@ import Skeleton from '../../skeloten'
 import './index.css'
 
 const Student = () => {
-    const { data, loading } = useFetch('http://localhost:5001/student')
+    const { data, loading } = useFetch('https://madrasah-app.onrender.com/student')
 
     return (
         <>
