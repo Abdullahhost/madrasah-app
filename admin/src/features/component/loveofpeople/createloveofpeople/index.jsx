@@ -45,7 +45,7 @@ const LoveOfPeopleCreate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5001/loveofpeople/create', formData, { withCredentials: true });
+      await axios.post('https://madrasah-app.onrender.com/loveofpeople/create', formData, { withCredentials: true });
       navigate('/loveofpeoplepannel')
     } catch (err) {
       console.log(err.response.data)

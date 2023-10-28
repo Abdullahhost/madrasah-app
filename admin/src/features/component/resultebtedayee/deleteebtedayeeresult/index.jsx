@@ -11,7 +11,7 @@ const DeleteEbtedayeeResult = () => {
 
     const handleDeleteTeacher = async (e) => {
         try{
-             const res = await axios.delete(`http://127.0.0.1:5001/classonetofour/${e}`)
+             const res = await axios.delete(`https://madrasah-app.onrender.com/classonetofour/${e}`)
      alert(res.data)
             navigate(-1)
      

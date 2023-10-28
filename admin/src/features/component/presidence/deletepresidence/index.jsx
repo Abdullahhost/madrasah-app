@@ -11,7 +11,7 @@ const DeletePresident = () => {
 
     const handleDeleteTeacher = async (e) => {
         try{
-             const res = await axios.delete(`http://127.0.0.1:5001/presidence/${e}`)
+             const res = await axios.delete(`https://madrasah-app.onrender.com/presidence/${e}`)
      alert(res.data)
             navigate('/presidentpannel')
      

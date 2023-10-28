@@ -12,7 +12,7 @@ const DeleteNotice = () => {
 
     const handleDeleteTeacher = async (e) => {
         try{
-             const res = await axios.delete(`http://127.0.0.1:5001/notice/${e}`)
+             const res = await axios.delete(`https://madrasah-app.onrender.com/notice/${e}`)
      alert(res.data)
             navigate('/noticepannel')
      

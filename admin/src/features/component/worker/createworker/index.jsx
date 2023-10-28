@@ -48,7 +48,7 @@ const WorkerCreate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5001/worker/create', formData, { withCredentials: true });
+      await axios.post('https://madrasah-app.onrender.com/worker/create', formData, { withCredentials: true });
       navigate('/workerpannel')
     } catch (err) {
       console.log(err.response.data)

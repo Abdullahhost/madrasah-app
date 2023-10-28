@@ -11,7 +11,7 @@ import { Delete, Update } from '@mui/icons-material';
 
 const LoveOfPeople = () => {
 
-  const { data } = useFetch('http://127.0.0.1:5001/loveofpeople');
+  const { data } = useFetch('https://madrasah-app.onrender.com/loveofpeople');
   return (
     <div style={{ padding: '1rem' }} className='table' >
       <table>
@@ -35,7 +35,7 @@ const LoveOfPeople = () => {
               console.log(profile)
             return <tr key={_id} className={index % 2 !== 0 ? "oddrow" : "evenrow"}>
               <td>{peopleName}</td>
-              <td><img className='profile_picture' src={`http://localhost:5001/${profile}`} alt="image" /></td>
+              <td><img className='profile_picture' src={`https://madrasah-app.onrender.com/${profile}`} alt="image" /></td>
               <td>{peopleAddress}</td>
               <td>{mobileNumber}</td>
               <td>{emailAddress}</td>

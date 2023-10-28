@@ -31,7 +31,7 @@ const StudentUpdate = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:5001/student/${_id}`, teacherData, { withCredentials: true });
+            await axios.put(`https://madrasah-app.onrender.com/student/${_id}`, teacherData, { withCredentials: true });
             navigate('/studentpannel')
         } catch (err) {
             console.log(err.response.data)

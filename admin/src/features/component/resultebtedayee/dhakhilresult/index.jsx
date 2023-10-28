@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const ResultDakhil = () => {
 
-  const { data } = useFetch('http://127.0.0.1:5001/classonetofour/Dakhil');
+  const { data } = useFetch('https://madrasah-app.onrender.com/classonetofour/Dakhil');
 
   return (
     <>
@@ -36,7 +36,7 @@ const ResultDakhil = () => {
 
             <embed
 
-              src={`http://localhost:5001/${pdfFile}`}
+              src={`https://madrasah-app.onrender.com/${pdfFile}`}
               style={{ margin: '0 auto', display: 'block' }}
               width="95%"
               height="650px"

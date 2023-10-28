@@ -13,7 +13,7 @@ const DeleteWorker = () => {
 
     const handleDeleteTeacher = async (e) => {
         try{
-             const res = await axios.delete(`http://127.0.0.1:5001/worker/${e}`)
+             const res = await axios.delete(`https://madrasah-app.onrender.com/worker/${e}`)
      alert(res.data)
             navigate('/workerpannel')
      

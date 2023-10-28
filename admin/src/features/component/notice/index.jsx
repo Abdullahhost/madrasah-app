@@ -11,7 +11,7 @@ import { Delete, Update } from '@mui/icons-material';
 
 const Notice = () => {
 
-  const { data } = useFetch('http://127.0.0.1:5001/notice');
+  const { data } = useFetch('https://madrasah-app.onrender.com/notice');
   return (
     <div style={{ padding: '1rem' }} className='table' >
       <table>

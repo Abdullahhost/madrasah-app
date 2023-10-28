@@ -34,7 +34,6 @@ import StudentUpdate from './features/component/student/updatestudent'
 import DeleteStudent from './features/component/student/deletestudent'
 import ResultEbtedayee from './features/component/resultebtedayee'
 import DeleteEbtedayeeResult from './features/component/resultebtedayee/deleteebtedayeeresult'
-import CreateEbtedayeeResult from './features/component/resultebtedayee/createresultebtedayee'
 import ResultAlim from './features/component/resultebtedayee/alimresult'
 import ResultDakhil from './features/component/resultebtedayee/dhakhilresult'
 
@@ -43,8 +42,6 @@ import ResultDakhil from './features/component/resultebtedayee/dhakhilresult'
 function App() {
   return (
     <>
-
-
       <div className='admin_container'>
         <div>
           <Sidebar />
@@ -83,8 +80,6 @@ function App() {
             <Route path='/deleteworker' element={<DeleteWorker />} />
 
 
-
-
             {/* ===================== People Route ==================== */}
             <Route path='/loveofpeoplepannel' element={<LoveOfPeople />} />
             <Route path='/createloveofpeople' element={<LoveOfPeopleCreate />} />
@@ -111,20 +106,11 @@ function App() {
             <Route path='/alimresulttpannel' element={<ResultAlim />} />
             <Route path='/dakhilresultpannel' element={<ResultDakhil />} />
             <Route path='/resultdeleteclassonetofour' element={<DeleteEbtedayeeResult />} />
-            <Route path='/resultcreateclassonetofour' element={<CreateEbtedayeeResult />} />
-
-
-
-
-
-
 
           </Routes>
         </div>
 
       </div>
-
-
     </>
   )
 }

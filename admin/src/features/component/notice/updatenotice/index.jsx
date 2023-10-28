@@ -29,7 +29,7 @@ const NoticeUpdate = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:5001/notice/${_id}`, teacherData, { withCredentials: true });
+            await axios.put(`https://madrasah-app.onrender.com/notice/${_id}`, teacherData, { withCredentials: true });
             navigate('/noticepannel')
         } catch (err) {
             console.log(err.response.data)

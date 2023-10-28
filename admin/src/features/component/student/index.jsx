@@ -13,7 +13,7 @@ import { Delete, Update } from '@mui/icons-material';
 
 const Student = () => {
 
-  const { data } = useFetch('http://127.0.0.1:5001/student');
+  const { data } = useFetch('https://madrasah-app.onrender.com/student');
   return (
     <div style={{ padding: '1rem' }} className='table' >
       <table>

@@ -48,7 +48,7 @@ const SecretoryCreate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5001/secretory/create', formData, { withCredentials: true });
+      await axios.post('https://madrasah-app.onrender.com/secretory/create', formData, { withCredentials: true });
       navigate('/secretorypannel')
     } catch (err) {
       console.log(err.response.data)

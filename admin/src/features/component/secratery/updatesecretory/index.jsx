@@ -50,7 +50,7 @@ const SecretoryUpdate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5001/secretory/${_id}`, updateformData, { withCredentials: true });
+      await axios.put(`https://madrasah-app.onrender.com/secretory/${_id}`, updateformData, { withCredentials: true });
       navigate('/secretorypannel')
     } catch (err) {
       console.log(err.response.data)
@@ -59,7 +59,7 @@ const SecretoryUpdate = () => {
   return (
     <form onSubmit={handleSubmit} encType='multipart/form-data' className="create_teacher">
       <div className="image_section">
-        <img className='teacher_profile' src={profilePic ? URL.createObjectURL(profilePic) : `http://localhost:5001/${profile}`} alt="profileImage" />
+        <img className='teacher_profile' src={profilePic ? URL.createObjectURL(profilePic) : `https://madrasah-app.onrender.com/${profile}`} alt="profileImage" />
       </div>
       <div className="create_section_left">
 

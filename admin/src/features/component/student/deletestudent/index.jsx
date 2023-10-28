@@ -11,7 +11,7 @@ const DeleteStudent = () => {
 
     const handleDeleteTeacher = async (e) => {
         try{
-             const res = await axios.delete(`http://127.0.0.1:5001/student/${e}`)
+             const res = await axios.delete(`https://madrasah-app.onrender.com/student/${e}`)
      alert(res.data)
             navigate('/studentpannel')
      

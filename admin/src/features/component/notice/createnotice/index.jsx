@@ -31,7 +31,7 @@ const NoticeCreate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5001/notice/create', teacherData, { withCredentials: true });
+      await axios.post('https://madrasah-app.onrender.com/notice/create', teacherData, { withCredentials: true });
       navigate('/noticepannel')
     } catch (err) {
       console.log(err.response.data)

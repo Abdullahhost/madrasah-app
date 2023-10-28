@@ -47,7 +47,7 @@ const PresidentCreate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5001/presidence/create', formData, { withCredentials: true });
+      await axios.post('https://madrasah-app.onrender.com/presidence/create', formData, { withCredentials: true });
       navigate('/presidentpannel')
     } catch (err) {
       console.log(err.response.data)

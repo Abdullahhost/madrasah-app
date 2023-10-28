@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const ResultEbtedayee = () => {
 
-  const { data } = useFetch('http://127.0.0.1:5001/classonetofour/Ebtedayee');
+  const { data } = useFetch('https://madrasah-app.onrender.com/classonetofour/Ebtedayee');
 
   return (
     <>
@@ -35,7 +35,7 @@ const ResultEbtedayee = () => {
 
             <embed
 
-              src={`http://localhost:5001/${pdfFile}`}
+              src={`https://madrasah-app.onrender.com/${pdfFile}`}
               style={{ margin: '0 auto', display: 'block' }}
               width="95%"
               height="650px"

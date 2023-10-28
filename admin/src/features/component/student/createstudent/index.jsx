@@ -22,7 +22,7 @@ const StudentCreate = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5001/student/create', teacherData, { withCredentials: true });
+            await axios.post('https://madrasah-app.onrender.com/student/create', teacherData, { withCredentials: true });
             navigate('/studentpannel')
         } catch (err) {
             console.log(err.response.data)
