@@ -36,6 +36,7 @@ import ResultEbtedayee from './features/component/resultebtedayee'
 import DeleteEbtedayeeResult from './features/component/resultebtedayee/deleteebtedayeeresult'
 import ResultAlim from './features/component/resultebtedayee/alimresult'
 import ResultDakhil from './features/component/resultebtedayee/dhakhilresult'
+import CreateEbtedayeeResult from './features/component/resultebtedayee/createresultebtedayee'
 
 
 
@@ -106,6 +107,7 @@ function App() {
             <Route path='/alimresulttpannel' element={<ResultAlim />} />
             <Route path='/dakhilresultpannel' element={<ResultDakhil />} />
             <Route path='/resultdeleteclassonetofour' element={<DeleteEbtedayeeResult />} />
+            <Route path='/resultcreateclassonetofour' element={<CreateEbtedayeeResult />} />
 
           </Routes>
         </div>
