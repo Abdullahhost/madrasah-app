@@ -8,9 +8,6 @@ import Skeleton from '../../skeloten';
 const Teacher = () => {
 
   const { data, loading, } = useFetch('https://madrasah-app.onrender.com/teacher')
-
-  // const images = ['images/teacher (1).jpg', 'images/teacher (2).jpg', 'images/teacher (3).jpg', 'images/teacher (4).jpg', 'images/teacher (6).jpg', 'images/teacher (7).jpg',]
-
   return (
     <>
       {loading ? <Skeleton /> : <div className='card_ui_section'>
@@ -30,7 +27,6 @@ const Teacher = () => {
             </div>
           </div>
         })}
-
 
       </div>}
     </>

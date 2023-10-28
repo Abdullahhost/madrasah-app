@@ -39,7 +39,7 @@ const CreateEbtedayeeResult = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5001/classonetofour/create', formData, { withCredentials: true });
+      await axios.post('https://madrasah-app.onrender.com/classonetofour/create', formData, { withCredentials: true });
       navigate(-1)
     } catch (err) {
       console.log(err.response.data)
@@ -61,7 +61,7 @@ const CreateEbtedayeeResult = () => {
         <p>Title</p>
         <input required type="text" name='title' onChange={handleChange} placeholder="Title must be [Ebtedayee || Dhakhil || Alim]" />
          
-        <input className='submit_btn' type='submit' value={'Create Teacher'} />
+        <input className='submit_btn' type='submit' value={'Create Result'} />
       </div>
     </form>
   )

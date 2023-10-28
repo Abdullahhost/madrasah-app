@@ -48,6 +48,7 @@
     height: 110px;
     object-fit: cover;
     border-radius: 50%;
+    box-shadow: 0 0 5px #000;
 }
 .features_heading{
     color: #444;
@@ -112,7 +113,9 @@
         width: 100%;
     }
     .features_section_part{
-        gap: 1.5rem;
+        gap: 0rem;
+        padding: 30px 20px;
+        flex-direction: column;
     }
 }
 

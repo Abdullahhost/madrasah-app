@@ -60,8 +60,7 @@
 }
 
 .form_section {
-  background: url('images/form_bac.gif') center/cover;
-  /* background: radial-gradient(#ffffff, #f7fcff) ; */
+  background: url('../../../../public/images/form_bac.gif') center/cover;
 }
 
 .form-group input,

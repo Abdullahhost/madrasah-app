@@ -37,7 +37,7 @@ const Features = () => {
 
                         <div className="features_section_part">
                             <div>
-                                <img className='features_image' src="images/featurec_curiculm.webp" alt="images" />
+                                <img className='features _image' src="images/featurec_curiculm.webp" alt="images" />
                             </div>
                             <div>
                                 <h2 className='features_heading'>Structured Curriculum</h2>

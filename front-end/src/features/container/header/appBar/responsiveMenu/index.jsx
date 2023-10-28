@@ -5,7 +5,7 @@ import TopMenu from "../../../../components/topMenu";
 import { Link, NavLink } from "react-router-dom";
 import useFetch from "../../../../../settings/hooks"; 
 const ResponsiveMenuBar = () => {
-  const {data} = useFetch('http://localhost:5001/notice');
+  const {data} = useFetch('https://madrasah-app.onrender.com/notice');
   return (
     <div>
        <div className="menu_responsive_section">
@@ -46,10 +46,9 @@ const ResponsiveMenuBar = () => {
                       <span tabIndex={1}>Result</span>
                     </li>
                     <div className='menu_responsive_sub_menu'>
-                      <li><NavLink to={'/onetofour'} tabIndex={1} >class 1-4</NavLink></li>
-                      <li><NavLink to={'/fivetoeight'} tabIndex={1} >class 5-8 </NavLink></li>
-                      <li><NavLink to={'/dakhilresult'} tabIndex={1} >Dhakil</NavLink></li>
-                      <li><NavLink to={'/alimresult'} tabIndex={1} >Alim</NavLink></li>
+                      <li><NavLink to={'/ebtedayee_result_pannel'} tabIndex={1} >Ebtedayee Result</NavLink></li>
+                      <li><NavLink to={'/dakhil_result_pannel'} tabIndex={1} >Dakhil Result</NavLink></li>
+                      <li><NavLink to={'/alim_result_pannel'} tabIndex={1} >Alim Result</NavLink></li>
                     </div>
                   </div>
                 <div className='menu_bottom_sub'>

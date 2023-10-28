@@ -13,7 +13,7 @@ const Footer = () => {
                     <div className="footer_left_section">
                         <div className="footer_left_top">
                             <h3>History of Shahdharipara Mmdrashah</h3>
-                            <p>What sets Shahdharipara K.K.S Alim Madrashah, apart is our unwavering commitment to academic rigor and holistic development. We blend a rich academic curriculum with hands-on experiences, cutting-edge research opportunities, and a wide range of extracurricular activities. This multidimensional approach ensures that our graduates are not only well-prepared academically but also possess the adaptability and creativity to excel in various domains.</p>
+                            <p>What sets Shahdharipara K.A.S Alim Madrashah, apart is our unwavering commitment to academic rigor and holistic development. We blend a rich academic curriculum with hands-on experiences, cutting-edge research opportunities, and a wide range of extracurricular activities. This multidimensional approach ensures that our graduates are not only well-prepared academically but also possess the adaptability and creativity to excel in various domains.</p>
                 
                         </div>
 
