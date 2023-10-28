@@ -5,7 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "npm i",
+    "dev": "nodemon index.js"
+
   },
   "keywords": [],
   "author": "",
