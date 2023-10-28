@@ -31,7 +31,7 @@
     position:absolute;
     content: "";
     bottom: -80px;
-    left: -250px;
+    left: -270px;
     background: #0001;
 
     backdrop-filter: blur(20px);

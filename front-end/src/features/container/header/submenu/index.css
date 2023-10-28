@@ -36,3 +36,10 @@
     background: #34ee97;
     border-bottom: 1px solid #0000006c;
 }
+
+
+@media screen and (max-width: 750px) {
+    .submenu_container{
+        padding: 1rem 0rem 0rem 2rem;
+    }
+}
