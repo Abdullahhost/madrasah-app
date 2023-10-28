@@ -2,7 +2,7 @@
 import multer from 'multer';
 
 import express from 'express'
-import { createWorker, deleteWorker, getWorker, updateWorker } from '../controllers/Worker.js';
+import { createWorker, deleteWorker, getWorker, updateWorker } from '../controllers/worker.js';
 
 const router = express.Router();
 

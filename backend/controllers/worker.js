@@ -2,7 +2,7 @@
 
 import fs from 'fs' 
 
-import Worker from "../modal/Worker.js";
+import Worker from "../modal/worker.js";
 
 export const createWorker = async (req, res, next) => {
 
