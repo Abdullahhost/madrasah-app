@@ -2,7 +2,7 @@
 
 
 import express from 'express'
-import { countBYStudent, createStudent, deleteStudent, getStudent, updateStudent } from '../controllers/Student.js';
+import { countBYStudent, createStudent, deleteStudent, getStudent, updateStudent } from '../controllers/student.js';
 
 const router = express.Router();
 
