@@ -7,7 +7,7 @@ const Features = () => {
         <>
             <section className='features'>
 
-                <Grid container direction={'column'} alignItems={'center'} gap={2}>
+                <Grid container direction={'column'} alignItems={'center'} gap={2} padding={1}>
                     <h1 className="features_main_heading">Features of Our Madrashah</h1>
                     <Typography variant='contained' textAlign={'center'} sx={{ color: '#777777', fontWeight: 'bolder' }} >Embarking on a journey with our Madrashah promises a profound spiritual and educational experience. Our institution is dedicated to providing a nurturing environment where individuals can deepen their understanding of Islamic teachings, morals, and values. Through dedicated mentors, comprehensive curriculum, and a sense of community, joining our Madrashah offers an opportunity to strengthen faith, cultivate character, and contribute positively to both personal and communal growth.</Typography>
                 </Grid>
@@ -37,7 +37,7 @@ const Features = () => {
 
                         <div className="features_section_part">
                             <div>
-                                <img className='features _image' src="images/featurec_curiculm.webp" alt="images" />
+                                <img className='features_image' src="images/featurec_curiculm.webp" alt="images" />
                             </div>
                             <div>
                                 <h2 className='features_heading'>Structured Curriculum</h2>

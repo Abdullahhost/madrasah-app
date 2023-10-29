@@ -3,7 +3,6 @@
     width: 100%;
     padding: 1rem 1.5rem;
     background: #161616;
-    animation: fadeIn linear .6s 1;
 }
 .menu_responsive_section li{
     border-bottom: 1px solid #fff2;
@@ -50,16 +49,6 @@ color: #fff;
 
 .btn_group{
     width: fit-content;
-}
-
-
-@keyframes fadeIn {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
 }
 
 .menu_responsive_link_section .menu_top:hover a, .menu_responsive_link_section .menu_top:hover .setColor{

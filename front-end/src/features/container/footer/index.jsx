@@ -52,7 +52,7 @@ const Footer = () => {
                             </div>
 
                             <div className="footer_left_bottom_toggle">
-                                <img className='logo_image' src="images/logo.png" alt="images" />
+                                <img className='logo_image' src={footerLogo} alt="images" />
                                 <h6 className='logo_text'>Shahdharipara K.A.S Alim madrashah </h6>
                             </div>
                         </div>

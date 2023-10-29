@@ -20,7 +20,7 @@ const [toggleBtn, setToggleBtn] = useState(false);
 
   return (
     <div>
-      <Grid width={'min(100% - 3rem, 155ch)'} m={'0 auto'} alignItems={'center'} p={2} container direction={'row'} justifyContent={'space-between'}>
+      <Grid className='menu_wrapper_container' width={'min(100% - 3rem, 155ch)'} m={'0 auto'} alignItems={'center'} p={2} container direction={'row'} justifyContent={'space-between'}>
         <Grid item>
           <Grid className='logo_section' container alignItems={'center'} sx={{flexWrap: 'wrap-reverse'}} gap={1}>
             <img src={logo} alt="images" className="logo" />
@@ -61,12 +61,14 @@ const [toggleBtn, setToggleBtn] = useState(false);
         </Grid>
         </nav>
       </Grid>
-      {toggleBtn && (
-        <div className='responsive_menu'>
+     
+        <div style={toggleBtn ?
+           {transition: 'all ease-in-out .3s', transform: 'translateY(0px)'} 
+            :
+           {position: 'absolute', top: '-100%', left: '0', width: '100%', transform: "translateY(-100%)", transition: 'all ease-in-out .3s'}} >
             <ResponsiveMenuBar />
         </div>
-        )
-      }
+   
     </div>
   )
 }

@@ -68,6 +68,16 @@ li{
 .menu_bottom_section_toggle{
     display: none;
 }
+
+.responsive_menu{
+    width: 0px;
+    transition: all ease-in .3s;
+}
+
+.responsive_menu_open{
+    transition: all ease-in .3s;
+    width: 100%;
+}
 @media screen and ( max-width: 1150px ) {
     .menu_bottom_section_toggle{
         display: block;
@@ -84,6 +94,9 @@ li{
   }
 }
 @media screen and ( max-width: 850px ) {
+    .menu_wrapper_container{
+        width: min(100% - 0rem, 155ch) !important;
+    }
   
   .logo{
     width: 75px;

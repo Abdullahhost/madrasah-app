@@ -1,6 +1,8 @@
 
 import HeroSlider, { MenuNav, Overlay, Slide } from "hero-slider";
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
+
+import './index.css'
 
 const Banner = () => {
 
@@ -38,11 +40,11 @@ const Banner = () => {
       
       >
       <Overlay>
-        <Box>
-          <Typography variant='h2' fontWeight={'bolder'} mt={5} color={'#fff'} textAlign={'center'}>IN The name of Allah The most graceful</Typography>
-          <Typography variant='h5' fontWeight={'bolder'} color={'#fff'} textAlign={'center'}>
-            Always do hard work for you desirable success
-          </Typography>
+        <Box className="bannar-heading">
+          <h2>Shahdharipara khaja anayetullah sunni Alim Madrasah</h2>
+          <h3>
+            Always stands for truth islam and beside muhammad (sm)
+          </h3>
         </Box>
       </Overlay>
 

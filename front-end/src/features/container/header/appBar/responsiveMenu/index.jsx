@@ -4,13 +4,19 @@ import './index.css';
 import TopMenu from "../../../../components/topMenu";
 import { Link, NavLink } from "react-router-dom";
 import useFetch from "../../../../../settings/hooks"; 
+// eslint-disable-next-line react/prop-types
 const ResponsiveMenuBar = () => {
   const {data} = useFetch('https://madrasah-app.onrender.com/notice');
+
+  const handleClick = () => {
+
+  }
+
   return (
     <div>
        <div className="menu_responsive_section">
               <ul className=''>
-                <li><NavLink to="/" tabIndex={1} >Home</NavLink></li>
+                <li><NavLink onClick={handleClick} to="/" tabIndex={1} >Home</NavLink></li>
                   <div className='menu_bottom_sub'>
                       <li className='responsive_menu_btn'>
                       <span tabIndex={1}>About</span>
