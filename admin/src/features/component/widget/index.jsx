@@ -16,7 +16,7 @@ const Widget = ({ type }) => {
 const firstText = maindata.slice(5, maindata.length);
 
 
-const { data }  = useFetch(`http://127.0.0.1:5001/${firstText}/${type}`)
+const { data }  = useFetch(`https://madrasah-app.onrender.com/${firstText}/${type}`)
 
   let propsdata;
 
