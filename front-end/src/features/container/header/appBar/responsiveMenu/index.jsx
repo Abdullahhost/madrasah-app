@@ -27,7 +27,6 @@ const ResponsiveMenuBar = () => {
                           <li><NavLink to="/president" tabIndex={1}>President</NavLink></li>
                           <li><NavLink to="/secretary" tabIndex={1}>Secretary</NavLink></li>
                           <li><NavLink to="/worker" tabIndex={1}>Worker</NavLink></li>
-                          <li><NavLink to="/supporter" tabIndex={1}>Supporter</NavLink></li>
                           <li><NavLink to="/loveofpeople" tabIndex={1}>Love Of People</NavLink></li>
                          </ul>
                     </div>
