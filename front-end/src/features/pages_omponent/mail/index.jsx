@@ -13,7 +13,7 @@ const MailPages = () => {
     e.preventDefault();
 
 
-    emailjs.sendForm('service_3954jwk', 'template_cz8e00m', e.target, 'RvUiNuPUZDl3FmNRz').then(res => {
+    emailjs.sendForm('service_b9qa0fk', 'template_2uxlsks', e.target, 'RvUiNuPUZDl3FmNRz').then(res => {
       console.log(res)
       alert("Message send successfully")
     }).catch(err => {
