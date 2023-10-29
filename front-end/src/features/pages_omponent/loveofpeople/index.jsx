@@ -17,6 +17,7 @@ const People = () => {
 
             const {peopleName, peopleAddress, mobileNumber, emailAddress, profile, _id } = item
               return <div className='card_ui' key={_id}>
+                 <div className='pathdeasign'></div>
             <div className="card_image">
               <img src={`https://madrasah-app.onrender.com/${profile}`} alt="" />
             </div>

@@ -14,8 +14,7 @@ import TopMenu from '../../../components/topMenu';
 // import useFetch from '../../../../settings/hooks';
 const AppBar = () => {
 const [toggleBtn, setToggleBtn] = useState(false);
-
-// const {data} = useFetch('http://localhost:5001/user');
+          
 
 
   return (
