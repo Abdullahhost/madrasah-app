@@ -2,40 +2,21 @@
 
 import './index.css';
 
-// import useFetch from '../../../settings/hooks'
-// import Skeleton from '../../skeloten';
+import useFetch from '../../../settings/hooks'
+import Skeleton from '../../skeloten';
 
 import { useSelector } from 'react-redux';
 const Teacher = () => {
 
-  // const { data, loading, } = useFetch('https://madrasah-app.onrender.com/teacher')
+  const { data, loading, } = useFetch('https://madrasah-app.onrender.com/teacher')
 
   const lightDarkMode = useSelector(state => state.dark.dark)
   return (
     <>
 
-      <div className='card_ui_section'>
-        {/* {loading ? <Skeleton /> : <div className='card_ui_section'> */}
-        {/* {data?.map((item) => {
-          return <div className='card_ui' key={item._id}>
-            <div className='pathdeasign'></div>
-            <div className="card_image">
-              <img src={`https://madrasah-app.onrender.com/${item.profile}`} alt="image" />
-            </div>
-            <div className="card_content">
-              <h2>{item.teacherName}</h2>
-              <small><strong>{item.designation} </strong> Shahdharipara K.A.S Alim Madrashah</small><br />
-              <p>Depertment: <strong> {item.depertment} </strong></p>
-              <p>Educational Qualification : {item.educationQualification}</p>
-              <cite>Phone Number : {item.mobileNumber}</cite><br />
-              <small>Email :{item.emailAddress}</small>
-            </div>
-          </div>
-        })} */}
-
-
-        <div
-          className='card_ui'
+        { loading ? <Skeleton /> : <div className='card_ui_section'>
+        {data?.map((item) => {
+          return <div className='card_ui'
           style={lightDarkMode
             ?
             {
@@ -47,11 +28,12 @@ const Teacher = () => {
               boxShadow: "0 0 5px rgba(59, 59, 59, 0.467)",
               border: "1px solid #0001"
             }
+          } 
+          
+          
+          key={item._id}>
 
-          }
-
-        >
-          <div
+            <div 
 
             style={
               lightDarkMode
@@ -60,34 +42,32 @@ const Teacher = () => {
 
                 :
                 { background: 'radial-gradient(rgb(251, 255, 0) 20%, rgb(201, 255, 180), rgb(255, 255, 255))' }
-
             }
-            className='pathdeasign'>
 
-          </div>
-          <div className="card_image">
-            <img src="images/devwithabdullah.jpg" alt="image" />
-          </div>
-          <div
-            className="card_content"
+            className='pathdeasign'></div>
+            <div className="card_image">
+              <img src={`https://madrasah-app.onrender.com/${item.profile}`} alt="image" />
+            </div>
+            <div  className="card_content"
             style={lightDarkMode ?
 
               { background: "linear-gradient(to top,  #333 ,#0002)", color: "#fff" }
               :
               { background: "linear-gradient(to top, #0002, #fff)" }
             }
-
-          >
-            <h2>Abdullah al Mamun</h2>
-            <small><strong>Teacher </strong> Shahdharipara K.A.S Alim Madrashah</small><br />
-            <p>Depertment: <strong> Computer </strong></p>
-            <p>Educational Qualification : Diploma in engineer</p>
-            <cite>Phone Number : 0172054985</cite><br />
-            <small>Email :abdullahgoodboy@gmail.com</small>
+            
+            >
+              <h2>{item.teacherName}</h2>
+              <small><strong>{item.designation} </strong> Shahdharipara K.A.S Alim Madrashah</small><br />
+              <p>Depertment: <strong> {item.depertment} </strong></p>
+              <p>Educational Qualification : {item.educationQualification}</p>
+              <cite>Phone Number : {item.mobileNumber}</cite><br />
+              <small>Email :{item.emailAddress}</small>
+            </div>
           </div>
-        </div>
-
-      </div>
+        })}
+        
+        </div>}
     </>
   )
 }
