@@ -25,7 +25,7 @@ export const ToggleDark = () => {
   return(
     <>
             <Button variant='contained' size='small' sx={{marginRight: '.2rem'}} onClick={toggleLamp} startIcon={lightDarkMode ? <LightMode /> : <DarkMode />}>
-              {lightDarkMode ? "Light Mode" : "Dark Mode"}
+              {lightDarkMode ? "Light" : "Dark"}
             </Button>
     </>
   )
