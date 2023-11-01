@@ -1,9 +1,12 @@
 
 
 import { useState } from 'react';
+
+
+
 import {  Button, Grid } from '@mui/material';
 import { Search,MenuOpen,CancelPresentation } from '@mui/icons-material';
-import BottomMenu from '../../../components/menuBottom';
+import BottomMenu, { ToggleDark } from '../../../components/menuBottom';
 
 import logo from '../../../../../public/images/logo.png'
 
@@ -11,10 +14,14 @@ import logo from '../../../../../public/images/logo.png'
 import './index.css';
 import ResponsiveMenuBar from './responsiveMenu';
 import TopMenu from '../../../components/topMenu';
+
+import { useSelector } from 'react-redux';
+
 // import useFetch from '../../../../settings/hooks';
 const AppBar = () => {
 const [toggleBtn, setToggleBtn] = useState(false);
           
+const ligthDarkMode = useSelector(state => state.dark.dark)
 
 
   return (
@@ -24,9 +31,9 @@ const [toggleBtn, setToggleBtn] = useState(false);
           <Grid className='logo_section' container alignItems={'center'} sx={{flexWrap: 'wrap-reverse'}} gap={1}>
             <img src={logo} alt="images" className="logo" />
             <div>
-            <h3 className='stylist'>Shahdhari Para</h3>
-            <h5 className='stylist'>K.A.S</h5>
-            <h6 className='stylist'>Alim Madrahsah</h6>
+            <h3 className={`${ligthDarkMode ? "darkStyle" : "stylist" }`}>Shahdhari Para</h3>
+            <h5 className={`${ligthDarkMode ? "darkStyle" : "stylist" }`}>K.A.S</h5>
+            <h6 className={`${ligthDarkMode ? "darkStyle" : "stylist" }`}>Alim Madrahsah</h6>
             </div>
           </Grid>
         </Grid>
@@ -52,9 +59,11 @@ const [toggleBtn, setToggleBtn] = useState(false);
             <BottomMenu />
           </Grid>
            <div  className='menu_bottom_section_toggle' >
-            <Button size='small' variant='contained' sx={{ background: '#414040' }}  onClick={() => setToggleBtn(!toggleBtn)}>
-            {toggleBtn ? <CancelPresentation /> : <MenuOpen />}
+           <ToggleDark />
+            <Button  size='small' variant='contained' sx={{ background: '#000', color: '#fff'}}  onClick={() => setToggleBtn(!toggleBtn)}>
+            {toggleBtn ? <CancelPresentation /> : <MenuOpen /> } 
            </Button>
+
             </div>
          </div>
         </Grid>

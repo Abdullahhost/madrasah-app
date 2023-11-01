@@ -1,9 +1,9 @@
 
 
-import {useSelector} from 'react-redux';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
+import { useSelector } from 'react-redux';  
 
 import Home from './features/main_pages/home';
 import Teacher_page from './features/main_pages/about';
@@ -23,12 +23,13 @@ import DakhilResult_Page from './features/main_pages/dakhilresult';
 import Alim_Result_page from './features/main_pages/alimresult';
 // import ChatPage from './features/pages_omponent/chatPage';
 
-
 function App() {
   const getDataInformation = useSelector((state) => state.auth.user)
 
+  
+const lightDarkMode = useSelector(state => state.dark.dark)
   return (
-    <>
+    <div style={lightDarkMode ? {background : '#0F0F0F'} : {background: "#fff"} }>
       <BrowserRouter>
 
       <Routes>
@@ -54,7 +55,7 @@ function App() {
 
       </Routes>
       </BrowserRouter>
-    </>
+    </div>
   )
 }
 

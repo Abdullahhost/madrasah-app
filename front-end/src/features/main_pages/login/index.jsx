@@ -87,7 +87,7 @@ const Login_page = () => {
                     
                  
 
-                            <p className="forget" style={{marginBottom: '.6rem', color: '#fff7'}}>Continue without login or sign up as a Gest mode ? <NavLink to={'/'}>Click here</NavLink></p>
+                            <p className="forget" style={{marginBottom: '.6rem', color: '#555'}}>Continue without login or sign up as a Gest mode ? <NavLink to={'/'}>Click here</NavLink></p>
                             <p className="forget">Dont Have not an account ? <Link to={'/signup'}>Sign up</Link></p>
                         </div>
                     </div>

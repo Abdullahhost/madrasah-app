@@ -1,17 +1,14 @@
 
 import emailjs from 'emailjs-com'
 
-import './index.css'
+import './index.css';
 
+import { useSelector } from 'react-redux'
 
 const MailPages = () => {
 
-
   const handleSubmit = (e) => {
-
-
     e.preventDefault();
-
 
     emailjs.sendForm('service_b9qa0fk', 'template_2uxlsks', e.target, 'RvUiNuPUZDl3FmNRz').then(res => {
       console.log(res)
@@ -21,14 +18,24 @@ const MailPages = () => {
     })
 
     e.target.reset();
-
   }
+
+  const lightDarkMode = useSelector(state => state.dark.dark)
 
   return (
     <>
-      <section id='contuctus' className="mailSection">
+      <section 
+        id='contuctus' 
+        className="mailSection"
+        style={lightDarkMode ? {backgroundImage: 'radial-gradient(#555 0.45px, #000 0.45px)'} : {backgroundImage: " radial-gradient(#5644f7 0.45px, #ffffff 0.45px)"}}
+        
+        >
 
-        <div className="form_label_part">
+        <div 
+        
+          className="form_label_part"
+          style={lightDarkMode ? {color: "#fff"} : {color: "#000"}}
+          >
           <h2>Contuct us</h2>
           <h4>
             Please Contuct bellow reasons

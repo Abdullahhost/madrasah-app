@@ -1,13 +1,14 @@
 
 
-import { configureStore } from "@reduxjs/toolkit";
-import authSlice from "../slice/auth";
-import lightDarkSlice from "../slice/lightdark";
+import { configureStore } from '@reduxjs/toolkit';
+import lightDarkSlice from '../slice/lightdark';
+import authSlice from '../slice/auth';
 
-const store =  configureStore({
+const store = configureStore({
     reducer: {
-        auth: authSlice.reducer,
-        lightdark: lightDarkSlice.reducer
+        dark: lightDarkSlice.reducer,
+        auth: authSlice.reducer
     }
 })
-export default store
+export default store;
+

@@ -1,16 +1,14 @@
+
 .about_section{
     width: min(100% - 3rem, 125ch);
     padding: 2rem 0rem;
     margin: 0 auto;
-    background-color: #ffffff;
     opacity: 0.8;
-    background-image: radial-gradient(#5644f7 0.45px, #ffffff 0.45px);
     background-size: 9px 9px;
 }
 .about_section{
     color: #444;
-    font-weight: bolder;
-    
+    font-weight: bolder;   
 }
 .underLine{
     width: 100%;
@@ -18,20 +16,21 @@
     background: radial-gradient(rgba(0, 0, 0, .4), #fffad1, #fffad1);
     margin: 1.5rem;
 }
-.about_section_paragraph{
+.about_section_paragraph, .dark_about_section_paragraph{
     transition: all ease-in-out .3s;
     position: relative;
     overflow: hidden;
 }
-.about_section_paragraph:hover{
-    /* background: #f1f2ff; */
-    background-image: radial-gradient(#f2ffe7 4px, #ffffff 4px);
+.about_section_paragraph:hover, .dark_about_section_paragraph:hover{
     background-size: 9px 9px;
     padding: 1.5rem;
     transform: scale(1.1);
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
-.about_section_paragraph::before{
+.dark_about_section_paragraph:hover{
+    background-image: radial-gradient(#323447 4px, #272727 4px);
+}
+.about_section_paragraph::before , .dark_about_section_paragraph::before{
     position: absolute;
     content: "✔Good";
     padding: 1.1rem 0rem;
@@ -40,16 +39,15 @@
     left: -1000px;
     width: 50%;
     height: 100%;
-    background: linear-gradient(to left, #4b4efc, rgb(192, 255, 216), transparent);
-    /* background: rgba(148, 148, 148, 0.308); */
-    /* backdrop-filter: blur(10px); */
+    background: linear-gradient(to left, #2b6eff, rgb(192, 255, 216), transparent);
     transition: all cubic-bezier(0.165, 0.84, 0.44, 1) .7s;
-    /* box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
     transition-delay: .3s;
-    /* opacity: 0; */
 }
-.about_section_paragraph:hover::before{
+.dark_about_section_paragraph::before{
+    color: #fff;
+    background: linear-gradient(to left, #fc4b4b, rgb(192, 255, 216), transparent);
+}
+.about_section_paragraph:hover::before, .dark_about_section_paragraph:hover::before{
     left: 80%;
-    /* opacity: 1; */
     filter: brightness(1.1);
 }
