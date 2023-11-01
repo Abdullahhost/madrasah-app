@@ -108,7 +108,7 @@ const BottomMenu = () => {
 
         </nav>
         <Grid item>
-          {getDataInformation ? <h4>{getDataInformation.userName}</h4> : <div className="btn_group">
+          {getDataInformation ? <> <ToggleDark /> <h4 style={lightDarkMode ? {color: "#fff"} : {color: "#000"}} >{getDataInformation.userName}</h4> </> : <div className="btn_group">
 
             
             <Button variant='outlined' color='success' size='small' onClick={() => navigate('login')}>
