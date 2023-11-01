@@ -30,9 +30,15 @@ const NoticeDetails = () => {
 
 
 
-      <small>{firstPartText}</small>
+      <small  style={lightDarKMode ?
+      { color: '#F1F1F1' }
+      :
+      { color: '#0008' }}>{firstPartText}</small>
       <br /><br />
-      <small>{secondPartText}</small>
+      <small  style={lightDarKMode ?
+      { color: '#F1F1F1' }
+      :
+      { color: '#0008' }}>{secondPartText}</small>
     </div>
   )
 }
