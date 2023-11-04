@@ -1,14 +1,25 @@
 
-
-import fs from 'fs' 
-
 import Worker from "../modal/worker.js";
+
+import fs from  'fs-extra'
+
+import cloudinary from 'cloudinary'
+
+cloudinary.v2.config({
+    cloud_name: 'dyuspxi9k',
+    api_key: '318972814933523',
+    api_secret : '7cwUhBbqmUeYilRbsRxcIi0ykws'
+})
+
+
 
 export const createWorker = async (req, res, next) => {
 
     try {
 
         const { workerName, designation, educationQualification, mobileNumber, emailAddress, profile } = req.body
+       
+        const upload = await cloudinary.v2.uploader.upload(req.file.path)
 
         const newWorker = new Worker({
            workerName,
@@ -16,8 +27,8 @@ export const createWorker = async (req, res, next) => {
            educationQualification,
            mobileNumber,
            emailAddress, 
-           profile: req.file.filename
-
+           profile: upload.secure_url,
+           public_id: upload.public_id
         })
 
         await newWorker.save();
@@ -28,8 +39,12 @@ export const createWorker = async (req, res, next) => {
             educationQualification,
             mobileNumber,
             emailAddress,
-            profile: req.file.filename
+            profile: upload.secure_url,
+            public_id: upload.public_id
         })
+
+        await fs.unlink(req.file.path)
+
     } catch (err) {
         next(err)
     }
@@ -39,23 +54,27 @@ export const updateWorker = async (req, res, next) => {
     try{
         const { workerName, designation, emailAddress, educationQualification, mobileNumber} = req.body 
         
+        const findDeleteInformation = await Worker.findById(req.params.id)
+        
         const update = {};
+
+        
         if (req.file) {
 
-            const findDeleteInformation = await Worker.findById(req.params.id)
+            const imageId = findDeleteInformation.public_id
 
-            const deletePhotoAlso = `assets/images/${findDeleteInformation.profile}`
-    
-            if(fs.existsSync(deletePhotoAlso)){
-                fs.unlinkSync(deletePhotoAlso);
+            if(imageId) {
+
+                await cloudinary.v2.uploader.destroy(imageId) 
             }
 
+            const newImage = await cloudinary.v2.uploader.upload(req.file.path)
+            
+            update.profile = newImage.secure_url,
+            update.public_id = newImage.public_id
 
 
-            const getprofilepath = req.file.path
-            const parts = getprofilepath.split("\\");
-            const imageName = parts[parts.length - 1];
-            update.profile = imageName 
+            await fs.unlink(req.file.path)
         }
         if (workerName) {
             update.workerName = workerName;
@@ -97,17 +116,16 @@ export const deleteWorker = async (req, res, next) => {
     try {
 
 
-        const findDeleteInformation = await Worker.findById(req.params.id)
-        const deletePhotoAlso = `assets/images/${findDeleteInformation.profile}`
+        await Worker.findById(req.params.id).then((data) => {
 
-        if(fs.existsSync(deletePhotoAlso)){
-            fs.unlinkSync(deletePhotoAlso);
-        }
-        
-        else{
-            const deleteWorker = await Worker.findByIdAndDelete(req.params.id);
-            res.status(200).json('Worker Deleted Successfully!')
-        }
+            const deleteImage = data.public_id
+            cloudinary.v2.uploader.destroy(deleteImage)
+
+        }).finally(async () => {
+            const deleteSecretory = await Worker.findByIdAndDelete(req.params.id);
+            res.status(200).json('Secretory Deleted Successfully!')
+
+        })
     } catch (err) {
         next(err)
     }

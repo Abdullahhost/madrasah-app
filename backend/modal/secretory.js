@@ -25,6 +25,10 @@ const secretorySchema  = new mongoose.Schema({
     profile: {
         type: String,
         required: true
+    },
+    public_id: {
+        type: String,
+        default: false
     }
     
 }, { timestamps: true })

@@ -1,13 +1,25 @@
 
 
-import fs from 'fs' 
-
 import teacher from "../modal/teacher.js";
+
+import fs from  'fs-extra' 
+
+import cloudinary from 'cloudinary'
+
+
+cloudinary.v2.config({
+    cloud_name: 'dyuspxi9k',
+    api_key: '318972814933523',
+    api_secret : '7cwUhBbqmUeYilRbsRxcIi0ykws'
+})
 
 export const createteacher = async (req, res, next) => {
 
     try {
         const {teacherName, designation, depertment, educationQualification, mobileNumber, emailAddress } = req.body
+        
+        const upload = await cloudinary.v2.uploader.upload(req.file.path)
+       
         const newteacher = new teacher({
             teacherName,
             designation,
@@ -15,7 +27,8 @@ export const createteacher = async (req, res, next) => {
             educationQualification,
             mobileNumber,
             emailAddress,
-            profile: req.file.filename
+            profile: upload.url,
+            public_id: upload.public_id 
 
         })
 
@@ -28,8 +41,11 @@ export const createteacher = async (req, res, next) => {
             educationQualification,
             mobileNumber,
             emailAddress,
-            profile: req.file.filename
+            profile: upload.url,
+            public_id: upload.public_id 
         })
+
+        await fs.unlink(req.file.path)
     } catch (err) {
         next(err)
     }
@@ -41,22 +57,23 @@ export const updateTeacher = async (req, res, next) => {
         const {teacherName, designation, depertment, educationQualification, mobileNumber, emailAddress } = req.body;
 
 
+        const findDeleteInformation = await teacher.findById(req.params.id)
+        
         const update = {};
+
+        
         if (req.file) {
+            const imageId = findDeleteInformation.public_id
 
-            const findDeleteInformation = await teacher.findById(req.params.id)
-
-            const deletePhotoAlso = `assets/images/${findDeleteInformation.profile}`
-    
-            if(fs.existsSync(deletePhotoAlso)){
-                fs.unlinkSync(deletePhotoAlso);
+            if(imageId) {
+                await cloudinary.v2.uploader.destroy(imageId) 
             }
+            const newImage = await cloudinary.v2.uploader.upload(req.file.path)
+        
+            update.profile = newImage.secure_url,
+            update.public_id = newImage.public_id
 
-
-            const getprofilepath = req.file.path
-            const parts = getprofilepath.split("\\");
-            const imageName = parts[parts.length - 1];
-            update.profile = imageName 
+            await fs.unlink(req.file.path)
         }
         if (teacherName) {
             update.teacherName = teacherName;
@@ -99,17 +116,16 @@ export const getTeacher = async (req, res, next) => {
 export const deleteTeacher = async (req, res, next) => {
     try {
 
- 
-        const findDeleteInformation = await teacher.findById(req.params.id)
+        await teacher.findById(req.params.id).then((data) => {
 
-        const deletePhotoAlso = `assets/images/${findDeleteInformation.profile}`
+            const deleteImage = data.public_id
+            cloudinary.v2.uploader.destroy(deleteImage)
 
-        if(fs.existsSync(deletePhotoAlso)){
-            fs.unlinkSync(deletePhotoAlso);
-        }
+        }).finally(async () => {
+            const deleteSecretory = await teacher.findByIdAndDelete(req.params.id);
+            res.status(200).json('Teacher Deleted Successfully!')
 
-        const deleteTeacher = await teacher.findByIdAndDelete(req.params.id);
-        res.status(200).json('Teacher Deleted Successfully!')
+        })
     } catch (err) {
         next(err)
     }

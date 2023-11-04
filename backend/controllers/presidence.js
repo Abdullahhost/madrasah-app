@@ -1,19 +1,31 @@
 
-import fs from 'fs' 
-
 import Presidence from "../modal/precidence.js";
+
+
+import fs from  'fs-extra'
+
+import cloudinary from 'cloudinary'
+
+cloudinary.v2.config({
+    cloud_name: 'dyuspxi9k',
+    api_key: '318972814933523',
+    api_secret : '7cwUhBbqmUeYilRbsRxcIi0ykws'
+})
+
 
 export const createPresidence = async (req, res, next) => {
 
     try {
         const { presidenceName, designation, educationQualification, mobileNumber, emailAddress } = req.body
+        const upload = await cloudinary.v2.uploader.upload(req.file.path)
         const newPresidence = new Presidence({
             presidenceName,
             designation,
             educationQualification,
             mobileNumber,
             emailAddress,
-            profile: req.file.filename
+            profile: upload.secure_url,
+            public_id: upload.public_id
 
         })
 
@@ -25,8 +37,11 @@ export const createPresidence = async (req, res, next) => {
             educationQualification,
             mobileNumber,
             emailAddress,
-            profile: req.file.filename
+            profile: upload.secure_url,
+            public_id: upload.public_id
         })
+
+        await fs.unlink(req.file.path)
     } catch (err) {
         next(err)
     }
@@ -36,23 +51,27 @@ export const updatePresidence = async (req, res, next) => {
     try {
         const { presidenceName, designation, educationQualification, mobileNumber, emailAddress } = req.body
         
+        const findDeleteInformation = await Presidence.findById(req.params.id)
+        
         const update = {};
+
+        
         if (req.file) {
 
+            const imageId = findDeleteInformation.public_id
 
-            const findDeleteInformation = await Presidence.findById(req.params.id)
+            if(imageId) {
 
-            const deletePhotoAlso = `assets/images/${findDeleteInformation.profile}`
-    
-            if(fs.existsSync(deletePhotoAlso)){
-                fs.unlinkSync(deletePhotoAlso);
+                await cloudinary.v2.uploader.destroy(imageId) 
             }
-    
 
-            const getprofilepath = req.file.path
-            const parts = getprofilepath.split("\\");
-            const imageName = parts[parts.length - 1];
-            update.profile = imageName 
+            const newImage = await cloudinary.v2.uploader.upload(req.file.path)
+            
+            update.profile = newImage.secure_url,
+            update.public_id = newImage.public_id
+
+
+            await fs.unlink(req.file.path)
         }
         if (presidenceName) {
             update.presidenceName = presidenceName;
@@ -93,19 +112,16 @@ export const getPresidence = async (req, res, next) => {
 export const deletePresidence = async (req, res, next) => {
     try {
 
-        const findDeleteInformation = await Presidence.findById(req.params.id)
+        await Presidence.findById(req.params.id).then((data) => {
 
-        const deletePhotoAlso = `assets/images/${findDeleteInformation.profile}`
+            const deleteImage = data.public_id
+            cloudinary.v2.uploader.destroy(deleteImage)
 
-        if(fs.existsSync(deletePhotoAlso)){
-            fs.unlinkSync(deletePhotoAlso);
-        }
+        }).finally(async () => {
+            const deleteSecretory = await Presidence.findByIdAndDelete(req.params.id);
+            res.status(200).json('Secretory Deleted Successfully!')
 
-
-
-
-        const deletePresidence = await Presidence.findByIdAndDelete(req.params.id);
-        res.status(200).json('Presidence Deleted Successfully!')
+        })
     } catch (err) {
         next(err)
     }

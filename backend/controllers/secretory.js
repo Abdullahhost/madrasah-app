@@ -1,23 +1,30 @@
 
-
-import fs from 'fs' 
-
 import Secretory from "../modal/secretory.js";
+
+import fs from  'fs-extra'
+
+import cloudinary from 'cloudinary'
+
+cloudinary.v2.config({
+    cloud_name: 'dyuspxi9k',
+    api_key: '318972814933523',
+    api_secret : '7cwUhBbqmUeYilRbsRxcIi0ykws'
+})
 
 export const createSecretory = async (req, res, next) => {
 
     try {
 
         const { secretoryName, designation, educationQualification, mobileNumber, emailAddress } = req.body
-
+        const upload = await cloudinary.v2.uploader.upload(req.file.path)
         const newSecretory = new Secretory({
            secretoryName,
            designation,
            educationQualification,
            mobileNumber,
            emailAddress,
-           profile: req.file.filename
-
+           profile: upload.url,
+           public_id: upload.public_id 
         })
 
         await newSecretory.save();
@@ -28,8 +35,12 @@ export const createSecretory = async (req, res, next) => {
             educationQualification,
             mobileNumber,
             emailAddress,
-            profile: req.file.filename
+            profile: upload.secure_url, 
+            public_id: upload.public_id
         })
+
+        await fs.unlink(req.file.path)
+
     } catch (err) {
         next(err)
     }
@@ -40,23 +51,27 @@ export const updateSecretory = async (req, res, next) => {
 
         const { secretoryName, designation, educationQualification, mobileNumber, emailAddress } = req.body
         
+        const findDeleteInformation = await Secretory.findById(req.params.id)
+        
         const update = {};
+
+        
         if (req.file) {
 
+            const imageId = findDeleteInformation.public_id
 
-            const findDeleteInformation = await Secretory.findById(req.params.id)
+            if(imageId) {
 
-            const deletePhotoAlso = `assets/images/${findDeleteInformation.profile}`
-    
-            if(fs.existsSync(deletePhotoAlso)){
-                fs.unlinkSync(deletePhotoAlso);
+                await cloudinary.v2.uploader.destroy(imageId) 
             }
 
+            const newImage = await cloudinary.v2.uploader.upload(req.file.path)
+            
+            update.profile = newImage.secure_url,
+            update.public_id = newImage.public_id
 
-            const getprofilepath = req.file.path
-            const parts = getprofilepath.split("\\");
-            const imageName = parts[parts.length - 1];
-            update.profile = imageName 
+
+            await fs.unlink(req.file.path)
         }
         if (secretoryName) {
             update.secretoryName = secretoryName;
@@ -96,17 +111,16 @@ export const getSecretory = async (req, res, next) => {
 export const deleteSecretory = async (req, res, next) => {
     try {
 
-        const findDeleteInformation = await Secretory.findById(req.params.id)
+        await Secretory.findById(req.params.id).then((data) => {
 
-        const deletePhotoAlso = `assets/images/${findDeleteInformation.profile}`
+            const deleteImage = data.public_id
+            cloudinary.v2.uploader.destroy(deleteImage)
 
-        if(fs.existsSync(deletePhotoAlso)){
-            fs.unlinkSync(deletePhotoAlso);
-        }
+        }).finally(async () => {
+            const deleteSecretory = await Secretory.findByIdAndDelete(req.params.id);
+            res.status(200).json('Secretory Deleted Successfully!')
 
-
-        const deleteSecretory = await Secretory.findByIdAndDelete(req.params.id);
-        res.status(200).json('Secretory Deleted Successfully!')
+        })
     } catch (err) {
         next(err)
     }

@@ -39,7 +39,7 @@ const Secretory = () => {
             >
             </div>
             <div className="card_image">
-              <img src={`https://madrasah-app.onrender.com/${item.profile}`} alt="" />
+              <img src={item.profile} alt="image" />
             </div>
             <div className="card_content"
               style={lightDarkMode ?
