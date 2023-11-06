@@ -22,13 +22,7 @@ import AlimFeatures from './routes/alimfeatures.js';
 
 const app = express();
 
-app.use(cors(
-    {
-        origin: ["https://madrasah-app.vercel.app/", 'https://madrasah-app-admin.vercel.app/'],
-        credentials: true
-
-    }
-));
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static('assets/images'))
