@@ -45,7 +45,7 @@ export const createteacher = async (req, res, next) => {
             public_id: upload.public_id 
         })
 
-        await fs.unlink(req.file.path)
+        // await fs.unlink(req.file.path)
     } catch (err) {
         next(err)
         // console.log(err)
