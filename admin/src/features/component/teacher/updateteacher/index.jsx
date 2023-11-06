@@ -60,7 +60,7 @@ const TeacherUpdate = () => {
   return (
     <form onSubmit={handleSubmit} encType='multipart/form-data' className="create_teacher">
       <div className="image_section">
-        <img className='teacher_profile' src={profilePic ? URL.createObjectURL(profilePic) : `https://madrasah-app.onrender.com/${profile}`} alt="profileImage" />
+        <img className='teacher_profile' src={profilePic ? URL.createObjectURL(profilePic) : {profile} } alt="profileImage" />
       </div>
       <div className="create_section_left">
 
