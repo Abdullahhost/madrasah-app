@@ -41,7 +41,7 @@ const People = () => {
               }
             ></div>
             <div className="card_image">
-              <img src={`https://madrasah-app.onrender.com/${profile}`} alt="image" />
+              <img src={profile} alt="image" />
             </div>
             <div className="card_content"
 

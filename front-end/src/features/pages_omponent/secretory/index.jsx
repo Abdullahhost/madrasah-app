@@ -48,7 +48,7 @@ const Secretory = () => {
                 { background: "linear-gradient(to top, #0002, #fff)" }
               }
             >
-              <h2>{item.presidenceName}</h2>
+              <h2>{item.secretoryName}</h2>
               <small><strong>{item.designation} </strong> Shahdharipara K.A.S Alim Madrashah</small><br />
               <p>Depertment: <strong> {item.depertment} </strong></p>
               <p>Educational Qualification : {item.educationQualification}</p>

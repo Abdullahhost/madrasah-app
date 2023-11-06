@@ -30,10 +30,10 @@ const Presidence = () => {
             const { _id, presidenceName, profile, designation,
               educationQualification,
               mobileNumber, emailAddress } = element
-              console.log(profile)
+        
             return <tr key={_id} className={index % 2 !== 0 ? "oddrow" : "evenrow"}>
               <td>{presidenceName}</td>
-              <td><img className='profile_picture' src={`https://madrasah-app.onrender.com/${profile}`} alt="image" /></td>
+              <td><img className='profile_picture' src={profile} alt="image" /></td>
               <td>{designation}</td>
               <td>{educationQualification}</td>
               <td>{mobileNumber}</td>

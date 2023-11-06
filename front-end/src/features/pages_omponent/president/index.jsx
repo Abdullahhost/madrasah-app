@@ -47,7 +47,7 @@ const President = () => {
 
             </div>
             <div className="card_image">
-              <img src={`https://madrasah-app.onrender.com/${profile}`} alt="image" />
+              <img src={profile} alt="President Image" />
             </div>
             <div className="card_content"
             

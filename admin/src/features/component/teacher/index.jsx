@@ -32,7 +32,7 @@ const Teacher = () => {
             const { _id, teacherName, profile, designation,
               depertment, educationQualification,
               mobileNumber, emailAddress } = element
-              console.log(profile)
+
             return <tr key={_id} className={index % 2 !== 0 ? "oddrow" : "evenrow"}>
               <td>{teacherName}</td>
               <td><img className='profile_picture' src={profile} alt="image" /></td>

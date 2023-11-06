@@ -16,7 +16,9 @@ const PresidentUpdate = () => {
   const navigate = useNavigate();
 
 
-  const {_id, presidenceName, designation, emailAddress, profile, mobileNumber, educationQualification} = location.state
+  const {_id, presidenceName, designation, emailAddress, mobileNumber, educationQualification} = location.state
+
+  const profile =  location.state?.profile
 
   const [profilePic, setProfilePic] = useState(undefined)
   const [teacherData, setTeacherData] = useState({
@@ -58,7 +60,7 @@ const PresidentUpdate = () => {
   return (
     <form onSubmit={handleSubmit} encType='multipart/form-data' className="create_teacher">
       <div className="image_section">
-        <img className='teacher_profile' src={profilePic ? URL.createObjectURL(profilePic) : `https://madrasah-app.onrender.com/${profile}`} alt="profileImage" />
+        <img className='teacher_profile' src={profilePic ? URL.createObjectURL(profilePic) : profile } alt="profileImage" />
       </div>
       <div className="create_section_left">
 

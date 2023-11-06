@@ -35,7 +35,7 @@ const LoveOfPeople = () => {
               console.log(profile)
             return <tr key={_id} className={index % 2 !== 0 ? "oddrow" : "evenrow"}>
               <td>{peopleName}</td>
-              <td><img className='profile_picture' src={`https://madrasah-app.onrender.com/${profile}`} alt="image" /></td>
+              <td><img className='profile_picture' src={profile} alt="image" /></td>
               <td>{peopleAddress}</td>
               <td>{mobileNumber}</td>
               <td>{emailAddress}</td>
