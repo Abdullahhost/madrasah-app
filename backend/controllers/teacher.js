@@ -48,6 +48,7 @@ export const createteacher = async (req, res, next) => {
         await fs.unlink(req.file.path)
     } catch (err) {
         next(err)
+        // console.log(err)
     }
 }
 
