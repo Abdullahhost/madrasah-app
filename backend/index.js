@@ -24,7 +24,7 @@ const app = express();
 
 app.use(cors(
     {
-        origin: ["https://madrasah-app.vercel.app", 'https://madrasah-app-admin.vercel.app'],
+        origin: ["https://madrasah-app.vercel.app/", 'https://madrasah-app-admin.vercel.app/'],
         credentials: true
 
     }
