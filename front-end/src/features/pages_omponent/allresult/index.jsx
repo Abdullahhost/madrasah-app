@@ -22,7 +22,7 @@ const EbtedayeeResult = () => {
             </h2>
           <embed
             className="pdfReader"
-            src={`https://madrasah-app.onrender.com/${pdfFile}`}
+            src={pdfFile}
             width="100%"
             height="650px"
             title={'samplePdf'}
@@ -30,7 +30,7 @@ const EbtedayeeResult = () => {
           />
           <div className="btn_box" >
             <Button size='small' variant="contained" startIcon={<PictureAsPdf />}>
-              <NavLink to={`https://madrasah-app.onrender.com/${pdfFile}`}>View</NavLink>
+              <NavLink to={pdfFile}>View</NavLink>
             </Button>
             <span>Click View Button to view Ebtedayee Result</span>
           </div>

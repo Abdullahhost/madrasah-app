@@ -1,17 +1,32 @@
 
-import fs from 'fs'
 
 import EbtedayeeResult from "../modal/resultebtedayee.js"
+
+import fs from  'fs-extra'
+
+import cloudinary from 'cloudinary'
+
+cloudinary.v2.config({
+    cloud_name: 'dyuspxi9k',
+    api_key: '318972814933523',
+    api_secret : '7cwUhBbqmUeYilRbsRxcIi0ykws'
+})
+
 
 export const createEbtedayeeResult = async (req, res, next) => {
   try {
 
     const { title } = req.body
 
-    const pdf = new EbtedayeeResult({ title, pdfFile: req.file.filename });
+    const upload = await cloudinary.v2.uploader.upload(req.file.path)
+    const pdf = new EbtedayeeResult({ title, public_id: upload.public_id ,  pdfFile: upload.secure_url });
+    
     await pdf.save();
 
     res.status(201).json({ message: 'Result uploaded successfully' });
+
+    await fs.unlink(req.file.path)
+
   } catch (error) {
     next(error);
 
@@ -33,16 +48,17 @@ export const getPdfFile = async (req, res, next) => {
 
 export const deleteEbtedayeeResult = async ( req, res, next ) => {
   try {
+ await EbtedayeeResult.findById(req.params.id).then((data) => {
 
-    const findDeleteInformation = await EbtedayeeResult.findById(req.params.id)
-    const deletePhotoAlso = `assets/images/${findDeleteInformation.pdfFile}`
+            const deleteImage = data.public_id
+            cloudinary.v2.uploader.destroy(deleteImage)
 
-    if(fs.existsSync(deletePhotoAlso)){
-        fs.unlinkSync(deletePhotoAlso);
-    }
+        }).finally(async () => {
+            const deleteSecretory = await EbtedayeeResult.findByIdAndDelete(req.params.id);
+            res.status(200).json('Result Deleted Successfully')
 
-    const deleteEbtedayeeResult = await EbtedayeeResult.findByIdAndDelete(req.params.id);
-    res.status(200).json('EbtedayeeResult Deleted Successfully!')
+        })
+        
 } catch (err) {
     next(err)
 }

@@ -34,6 +34,7 @@ const MailPages = () => {
         <div 
         
           className="form_label_part"
+          data-aos="flip-up" data-aos-duration="1000"
           style={lightDarkMode ? {color: "#fff"} : {color: "#000"}}
           >
           <h2>Contuct us</h2>
@@ -62,7 +63,7 @@ const MailPages = () => {
         </div>
 
 
-      <form className='form_section' onSubmit={handleSubmit}>
+      <form data-aos="flip-left" data-aos-duration="1000" className='form_section' onSubmit={handleSubmit}>
         <div className='form_box'>
 
           <div className="form-group">

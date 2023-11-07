@@ -1,5 +1,7 @@
+import { useEffect } from 'react';
 
-
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
@@ -27,6 +29,11 @@ function App() {
 
   const getDataInformation = useSelector((state) => state.auth.user)
   
+
+  useEffect(() => {
+    Aos.init()
+  }, [])
+
 const lightDarkMode = useSelector(state => state.dark.dark)
   return (
     <div style={lightDarkMode ? {background : '#0F0F0F'} : {background: "#fff"} }>

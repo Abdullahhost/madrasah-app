@@ -20,7 +20,7 @@ const Features = () => {
 
                 <div className="features_section_wrapper">
                     <div className="features_section">
-                        <div style={lightDarkMode ? {boxShadow: "rgba(25, 255, 255, 1) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}: {boxShadow: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}} className="features_section_part">
+                        <div data-aos="fade-right" data-aos-duration="1500" style={lightDarkMode ? {boxShadow: "rgba(25, 255, 255, 1) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}: {boxShadow: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}} className="features_section_part">
                             <div>
                                 <img className='features_image' src="images/businessman-gif-46.gif" alt="images" />
                             </div>
@@ -29,7 +29,7 @@ const Features = () => {
                                 <p>Our Madrashah is staffed by a dedicated team of qualified and experienced instructors who are well-versed in Islamic studies and related disciplines. They are committed to nurturing a deep understanding of Islamic principles while fostering critical thinking and open dialogue.</p>
                             </div>
                         </div>
-                        <div style={lightDarkMode ? {boxShadow: "rgba(25, 255, 255, 1) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}: {boxShadow: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}} className="features_section_part">
+                        <div data-aos="flip-right" data-aos-duration="1000"  style={lightDarkMode ? {boxShadow: "rgba(25, 255, 255, 1) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}: {boxShadow: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}} className="features_section_part">
                             <div>
                                 <img className='features_image' src="images/Developing-personal-character-in-students-2.gif" alt="images" />
                             </div>
@@ -39,7 +39,7 @@ const Features = () => {
                             </div>
                         </div>
 
-                        <div style={lightDarkMode ? {boxShadow: "rgba(25, 255, 255, 1) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}: {boxShadow: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}} className="features_section_part">
+                        <div data-aos="flip-down" data-aos-duration="1000" style={lightDarkMode ? {boxShadow: "rgba(25, 255, 255, 1) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}: {boxShadow: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}} className="features_section_part">
                             <div>
                                 <img className='features_image' src="images/featurec_curiculm.webp" alt="images" />
                             </div>
@@ -52,7 +52,7 @@ const Features = () => {
                     </div>
                     <div className="features_section">
                        
-                        <div style={lightDarkMode ? {boxShadow: "rgba(25, 255, 255, 1) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}: {boxShadow: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}} className="features_section_part">
+                        <div data-aos="fade-left" data-aos-duration="1000" style={lightDarkMode ? {boxShadow: "rgba(25, 255, 255, 1) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}: {boxShadow: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}} className="features_section_part">
                             <div>
                                 <img className='features_image' src="images/modern_approch.gif
                                 " alt="images" />
@@ -63,7 +63,7 @@ const Features = () => {
                             </div>
                         </div>
 
-                        <div style={lightDarkMode ? {boxShadow: "rgba(25, 255, 255, 1) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}: {boxShadow: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}} className="features_section_part">
+                        <div  data-aos="flip-left" data-aos-duration="1000" style={lightDarkMode ? {boxShadow: "rgba(25, 255, 255, 1) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}: {boxShadow: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}} className="features_section_part">
                             <div>
                                 <img className='features_image' src="images/comunity.gif" alt="images" />
                             </div>
@@ -72,7 +72,7 @@ const Features = () => {
                                 <p>Our Madrashah actively engages with the local community through events, workshops, and outreach programs. This provides students with the opportunity to apply their knowledge in practical settings and contribute to the betterment of society.</p>
                             </div>
                         </div>
-                        <div style={lightDarkMode ? {boxShadow: "rgba(25, 255, 255, 1) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}: {boxShadow: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}} className="features_section_part">
+                        <div data-aos="flip-up" data-aos-duration="1000"  style={lightDarkMode ? {boxShadow: "rgba(25, 255, 255, 1) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}: {boxShadow: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}} className="features_section_part">
                             <div>
                                 <img className='features_image' src="images/progress1.gif" alt="images" />
                             </div>

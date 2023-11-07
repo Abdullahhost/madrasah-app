@@ -35,7 +35,7 @@ const ResultEbtedayee = () => {
 
             <embed
 
-              src={`https://madrasah-app.onrender.com/${pdfFile}`}
+              src={pdfFile}
               style={{ margin: '0 auto', display: 'block' }}
               width="95%"
               height="650px"
