@@ -37,7 +37,12 @@ import DeleteEbtedayeeResult from './features/component/resultebtedayee/deleteeb
 import ResultAlim from './features/component/resultebtedayee/alimresult'
 import ResultDakhil from './features/component/resultebtedayee/dhakhilresult'
 import CreateEbtedayeeResult from './features/component/resultebtedayee/createresultebtedayee'
-
+import FeaturesCreate from './features/component/features/createfeatures'
+import AlimFeatures from './features/component/features/alimfeatures'
+import DakhilFeatures from './features/component/features/dakhilfeatures'
+import EbtedayeeFeatures from './features/component/features/ebtedayeefeatures'
+import DakhilUpdate from './features/component/features/dakhilfeatures/update'
+import DeleteFeatures from './features/component/features/deletefeatures/index.jsX'
 
 
 function App() {
@@ -109,6 +114,21 @@ function App() {
             <Route path='/resultdeleteclassonetofour' element={<DeleteEbtedayeeResult />} />
             <Route path='/resultcreateclassonetofour' element={<CreateEbtedayeeResult />} />
 
+            
+            {/* ===================== Result Route ==================== */}
+            <Route path='/alimpannel' element={<AlimFeatures />} />
+            <Route path='/dakhilpannel' element={<DakhilFeatures />} />
+            <Route path='/ebtedayepannel' element={<EbtedayeeFeatures />} />
+            <Route path='/createfeatures' element={<FeaturesCreate />} />
+            <Route path='/deletefeatures' element={<DeleteFeatures />} />
+
+
+            {/* ===================== Result Route ==================== */}
+            <Route path='/createfeatures' element={<DakhilUpdate />} />
+          
+
+          
+          
           </Routes>
         </div>
 

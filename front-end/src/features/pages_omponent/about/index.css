@@ -17,7 +17,7 @@
     margin: 1.5rem;
 }
 .about_section_paragraph, .dark_about_section_paragraph{
-    transition: all ease-in-out .3s;
+    transition: ease-in-out 500ms !important;
     position: relative;
     overflow: hidden;
 }

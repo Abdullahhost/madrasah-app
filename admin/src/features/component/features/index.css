@@ -1,0 +1,17 @@
+.features_profile_picture{
+    width: 300px;
+}
+.featurestable p {
+    width: 200px;
+    height: 200px;
+
+    padding: 2px 5px;
+    text-overflow: " [..]";
+    white-space: wrap;
+    overflow: hidden;
+  }
+.featurestable tr {
+    vertical-align: top;
+    text-overflow: ellipsis;
+    padding-top: 1rem;
+}

@@ -23,6 +23,9 @@ import LoveofPeople_Page from './features/main_pages/loveofpeople';
 import EbtedayeeResult_page from './features/main_pages/allresult';
 import DakhilResult_Page from './features/main_pages/dakhilresult';
 import Alim_Result_page from './features/main_pages/alimresult';
+import Dakhil_Features_Page from './features/main_pages/dakhilfeatures';
+import Alim_Features_Page from './features/main_pages/alimfeatures';
+import Ebtedayee_Features_page from './features/main_pages/ebtedayeefeatures';
 // import ChatPage from './features/pages_omponent/chatPage';
 
 function App() {
@@ -40,8 +43,10 @@ const lightDarkMode = useSelector(state => state.dark.dark)
       <BrowserRouter>
 
       <Routes>
+
         <Route  path='/signup' element={<Sign_up />} />
         <Route  path='/login' element={<Login_page />} />
+        
       </Routes>
 
       <Routes>
@@ -59,6 +64,10 @@ const lightDarkMode = useSelector(state => state.dark.dark)
         <Route path='/ebtedayee_result_pannel' element={<EbtedayeeResult_page />} />
         <Route path='/dakhil_result_pannel' element={<DakhilResult_Page />} />
         <Route path='/alim_result_pannel' element={<Alim_Result_page />} />
+
+        <Route path='/ebtedayesector' element={<Ebtedayee_Features_page />} />
+        <Route path='/dakhilsector' element={<Dakhil_Features_Page />} />
+        <Route path='/alimsector' element={<Alim_Features_Page />} />
 
       </Routes>
       </BrowserRouter>

@@ -101,7 +101,6 @@ const BottomMenu = () => {
             <ul className='dropdown_menu'>
               <li><NavLink to={'/alimsector'}>Alim Sector</NavLink></li>
               <li><NavLink to={'/dhakhilsector'}> Dhakhil</NavLink></li>
-              <li><NavLink to={'/jdcsector'}>JDC</NavLink></li>
               <li><NavLink to={'/ebtedayesector'}>Ebtedaye</NavLink></li>
             </ul>
           </li>

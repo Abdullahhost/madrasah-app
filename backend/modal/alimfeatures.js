@@ -3,6 +3,10 @@
 import mongoose from "mongoose";
 
 const alimFeatures = new mongoose.Schema({
+    title: {
+        type : String,
+        default : false
+    },
     description: {
         type: String,
         required : true
@@ -14,14 +18,15 @@ const alimFeatures = new mongoose.Schema({
     established: {
         type: String,  
     },
-    whatWeHave: {
-        type: Array,
-        required: true
-    },
     profile: {  
         type: String,
         required: true
+    },
+    public_id: {
+        type : String,
+        default: false
     }
+
 })
 
 export default mongoose.model("AlimFeatures", alimFeatures)

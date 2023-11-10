@@ -9,7 +9,7 @@ const DakhilResult_Page = () => {
   return (
     <div>
       <AppBar />
-       <SubMenu dataprops='Result' />
+      <SubMenu dataprops='Result' />
       <DakhilResult />
       <Footer />
     </div>
