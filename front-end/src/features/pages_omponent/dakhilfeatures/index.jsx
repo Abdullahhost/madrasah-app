@@ -6,7 +6,7 @@ import Skeleton from "../../skeloten"
 
 import { useSelector } from "react-redux"   
 
-const Alim_Features = () => {
+const Dakhil_Features = () => {
 
   const { data, loading } = useFetch('https://madrasah-app.onrender.com/alimfeatures/Dakhil')
 
@@ -50,4 +50,4 @@ const Alim_Features = () => {
   )
 }
 
-export default Alim_Features
+export default Dakhil_Features

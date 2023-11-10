@@ -62,7 +62,7 @@ const ResponsiveMenuBar = () => {
                     </li>
                     <div className='menu_responsive_sub_menu'>
                       <li><NavLink to={'/alimsector'} tabIndex={1} >Alim Sector</NavLink></li>
-                      <li><NavLink to={'/dhakhilsector'} tabIndex={1} >Dhakhil</NavLink></li>
+                      <li><NavLink to={'/dakhilsector'} tabIndex={1} >Dhakhil</NavLink></li>
                       <li><NavLink to={'/ebtedayesector'} tabIndex={1} >Ebtedaye</NavLink></li>
                     </div>
                   </div>
