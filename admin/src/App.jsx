@@ -124,7 +124,7 @@ function App() {
 
 
             {/* ===================== Result Route ==================== */}
-            <Route path='/createfeatures' element={<DakhilUpdate />} />
+            <Route path='/updatedakhil' element={<DakhilUpdate />} />
           
 
           
