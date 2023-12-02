@@ -100,3 +100,6 @@ app.use((err, req, res, next) => {
 
 })
 
+
+
+// https://api.openweathermap.org/data/2.5/forecast?id=1336144&appid=442b8c73241930713f467c57509395e8   
