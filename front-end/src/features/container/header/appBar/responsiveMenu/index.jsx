@@ -4,6 +4,7 @@ import TopMenu from "../../../../components/topMenu";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import useFetch from "../../../../../settings/hooks";
 import { useSelector } from "react-redux";
+// eslint-disable-next-line react/prop-types
 const ResponsiveMenuBar = () => {
   const { data } = useFetch("https://madrasah-app.onrender.com/notice");
 
@@ -14,8 +15,8 @@ const ResponsiveMenuBar = () => {
 
   return (
     <div>
-      <div className="menu_responsive_section"> 
-        <ul className="">
+      <div className="menu_responsive_section">
+        <ul>
           <li>
             <NavLink onClick={handleClick} to="/" tabIndex={1}>
               Home
@@ -163,20 +164,6 @@ const ResponsiveMenuBar = () => {
               </Button>
             </div>
           )}
-        </div>
-        <div className="btn_group_section">
-          <div className="btn_group">
-            <Button variant="outlined" color="success" size="small">
-              Login
-            </Button>
-            <Button
-              className="signUpBtn"
-              variant="contained"
-              sx={{ background: "#212121" }}
-            >
-              Sign Up
-            </Button>
-          </div>
         </div>
       </div>
     </div>
