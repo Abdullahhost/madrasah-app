@@ -22,13 +22,25 @@ export const ToggleDark = () => {
     <>
       <Button
         onClick={toggleLamp}
-        style={{
-          color: "#fff",
-          background: "#2C318D",
-          border: "none",
-          borderRadius: "4px",
-          marginRight: "10px",
-        }}
+        style={
+          lightDarkMode
+            ? {
+                color: "#fff",
+                // background: "#2C318D",
+
+                border: "1px solid #fff2",
+                borderRadius: "4px",
+                marginRight: "10px",
+              }
+            : {
+                color: "#000",
+                // background: "#2C318D",
+
+                border: "1px solid #0002",
+                borderRadius: "4px",
+                marginRight: "10px",
+              }
+        }
       >
         {lightDarkMode ? (
           <LightMode fontSize="small" />
@@ -130,7 +142,7 @@ const BottomMenu = () => {
             <ul className="dropdown_menu">
               <li>
                 <NavLink to={"/ebtedayee_result_pannel"}>
-                  Ebtedayee Result 
+                  Ebtedayee Result
                 </NavLink>
               </li>
               <li>

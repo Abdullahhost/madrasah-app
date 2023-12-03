@@ -68,7 +68,7 @@ const TeacherCreate = () => {
           <input type="file" name='profile' required onChange={handleFileChange} />
         </div>
 
-        <p>Teasher Name</p>
+        <p>Teacher Name</p>
         <input required type="text" name='teacherName' onChange={handleChange} placeholder="Teacher name here" />
 
         <p>Designation</p>
